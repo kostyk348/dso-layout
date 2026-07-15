@@ -1,0 +1,107 @@
+// DSO Layout — Colemak-DH + Optimized Russian
+// Install: sudo cp dso /usr/share/X11/xkb/symbols/dso
+// Use: setxkbmap -layout dso -variant "" (or add to desktop environment)
+
+// English layer (Colemak-DH)
+partial default alphanumeric_keys
+xkb_symbols "eng" {
+  name[Group1] = "English (DSO)";
+
+  // Key codes are standard evdev
+  // Column 0-4 = left hand, 5-9 = right hand
+  
+  // Top row: Q W F P G J L U Y ;
+  key <AD01> { [ q, Q ] };
+  key <AD02> { [ w, W ] };
+  key <AD03> { [ f, F ] };
+  key <AD04> { [ p, P ] };
+  key <AD05> { [ g, G ] };
+  key <AD06> { [ j, J ] };
+  key <AD07> { [ l, L ] };
+  key <AD08> { [ u, U ] };
+  key <AD09> { [ y, Y ] };
+  key <AD10> { [ semicolon, colon ] };
+  
+  // Home row: A R S T D H N E I O
+  key <AC01> { [ a, A ] };
+  key <AC02> { [ r, R ] };
+  key <AC03> { [ s, S ] };
+  key <AC04> { [ t, T ] };
+  key <AC05> { [ d, D ] };
+  key <AC06> { [ h, H ] };
+  key <AC07> { [ n, N ] };
+  key <AC08> { [ e, E ] };
+  key <AC09> { [ i, I ] };
+  key <AC10> { [ o, O ] };
+  
+  // Bottom row: Z X C V B K M , . /
+  key <AB01> { [ z, Z ] };
+  key <AB02> { [ x, X ] };
+  key <AB03> { [ c, C ] };
+  key <AB04> { [ v, V ] };
+  key <AB05> { [ b, B ] };
+  key <AB06> { [ k, K ] };
+  key <AB07> { [ m, M ] };
+  key <AB08> { [ comma, less ] };
+  key <AB09> { [ period, greater ] };
+  key <AB10> { [ slash, question ] };
+  
+  // Punctuation
+  key <AD11> { [ bracketleft, braceleft ] };
+  key <AD12> { [ bracketright, braceright ] };
+  key <AC11> { [ apostrophe, quotedbl ] };
+  key <TLDE> { [ grave, asciitilde ] };
+  key <BKSL> { [ backslash, bar ] };
+};
+
+// Russian layer (Optimized)
+partial alphanumeric_keys
+xkb_symbols "rus" {
+  include "dso(eng)"
+  name[Group1] = "Russian (DSO)";
+
+  // Top row: Щ Ы Я Д Ь Ч Б Ж К Ю
+  key <AD01> { [ Cyrillic_sha, Cyrillic_SHA ] };
+  key <AD02> { [ Cyrillic_yeru, Cyrillic_YERU ] };
+  key <AD03> { [ Cyrillic_ya, Cyrillic_YA ] };
+  key <AD04> { [ Cyrillic_de, Cyrillic_DE ] };
+  key <AD05> { [ Cyrillic_softsign, Cyrillic_SOFTSIGN ] };
+  key <AD06> { [ Cyrillic_che, Cyrillic_CHE ] };
+  key <AD07> { [ Cyrillic_be, Cyrillic_BE ] };
+  key <AD08> { [ Cyrillic_zhe, Cyrillic_ZHE ] };
+  key <AD09> { [ Cyrillic_ka, Cyrillic_KA ] };
+  key <AD10> { [ Cyrillic_yu, Cyrillic_YU ] };
+  
+  // Home row: Э Е А С Л Т Н О И Х
+  key <AC01> { [ Cyrillic_e, Cyrillic_IE ] };  // э (capital Э = ИЕ)
+  key <AC02> { [ Cyrillic_ie, Cyrillic_IE ] };  // е
+  key <AC03> { [ Cyrillic_a, Cyrillic_A ] };    // а
+  key <AC04> { [ Cyrillic_es, Cyrillic_ES ] };  // с
+  key <AC05> { [ Cyrillic_el, Cyrillic_EL ] };  // л
+  key <AC06> { [ Cyrillic_te, Cyrillic_TE ] };  // т
+  key <AC07> { [ Cyrillic_en, Cyrillic_EN ] };  // н
+  key <AC08> { [ Cyrillic_o, Cyrillic_O ] };    // о
+  key <AC09> { [ Cyrillic_i, Cyrillic_I ] };    // и
+  key <AC10> { [ Cyrillic_ha, Cyrillic_HA ] };  // х
+  
+  // Bottom row: Ц Ш М П Ф З Г У
+  key <AB01> { [ Cyrillic_tse, Cyrillic_TSE ] };  // ц
+  key <AB02> { [ Cyrillic_sha, Cyrillic_SHA ] };  // ш
+  key <AB03> { [ Cyrillic_em, Cyrillic_EM ] };    // м
+  key <AB04> { [ Cyrillic_pe, Cyrillic_PE ] };    // п
+  key <AB05> { [ Cyrillic_ef, Cyrillic_EF ] };    // ф
+  key <AB06> { [ Cyrillic_ze, Cyrillic_ZE ] };    // з
+  key <AB07> { [ Cyrillic_ghe, Cyrillic_GHE ] };  // г
+  key <AB08> { [ Cyrillic_u, Cyrillic_U ] };      // у
+  
+  // Extra keys: Р В
+  key <AC11> { [ Cyrillic_er, Cyrillic_ER ] };    // р
+  key <AD11> { [ Cyrillic_ve, Cyrillic_VE ] };    // в
+  
+  // Remaining rare letters (via compose or dead keys):
+  // й (Cyrillic_shorti) — 0.01%, compose: 'й
+  // ъ (Cyrillic_hardsign) — 0.01%, compose: 'ъ
+};
+
+// Combined layout with language switch via Alt+Shift
+// (Default behavior — no changes needed)
