@@ -89,4 +89,4 @@ Use [keybr.com](https://keybr.com) or [monkeytype.com](https://monkeytype.com) f
 
 ## License
 
-MIT
+Apache 2.0
