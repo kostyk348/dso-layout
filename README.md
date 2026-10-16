@@ -1,5 +1,9 @@
 # DSO Layout
 
+[![Release](https://img.shields.io/github/v/release/kostyk348/dso-layout?sort=semver&color=blue)](https://github.com/kostyk348/dso-layout/releases)
+[![License](https://img.shields.io/badge/license-Apache-2.0-green)](https://github.com/kostyk348/dso-layout/blob/master/LICENSE)
+[![Last commit](https://img.shields.io/github/last-commit/kostyk348/dso-layout?branch=master)](https://github.com/kostyk348/dso-layout/commits/master)
+
 **Colemak-DH + Optimized Russian** — ergonomic keyboard layout for bilingual typing.
 
 Standard QWERTY/ЙЦУКЕН were designed for typewriters. This layout optimizes for human hands.
